@@ -19,6 +19,11 @@ const UserSchema = new mongoose.Schema({
     enum: [roles.admin, roles.moderator, roles.client],
     default: roles.client,
   },
+  status: {
+    type: String,
+    enum: ['Active', 'Inactive'],
+    default: 'Active',
+  },
 });
 
 UserSchema.pre('save', async function (next) {

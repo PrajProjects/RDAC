@@ -1,4 +1,5 @@
 <%- include ('layouts/header') %>
+
 <h1 class="table">Manage Users</h1>
 
 <table class="table">
@@ -6,6 +7,8 @@
     <th>id</th>
     <th>email</th>
     <th>role</th>
+    <th>status</th>
+    <th>actions</th>
   </thead>
   <tbody>
     <% users.forEach(user => { %>
@@ -13,18 +16,25 @@
       <td><%= user.id %></td>
       <td><a href="/admin/user/<%= user.id %>"><%= user.email %></a></td>
       <td>
-        <form
-          action="/admin/update-role"
-          method="post"
-          class="manage-user-form"
-        >
+        <form action="/admin/update-role-status" method="post" class="manage-user-form">
           <input type="hidden" name="id" value="<%= user.id %>" />
           <select name="role" id="role">
-            <option value="ADMIN" <%= user.role === 'ADMIN' ? 'selected' : '' %> >Admin</option>
+            <option value="ADMIN" <%= user.role === 'ADMIN' ? 'selected' : '' %>>Admin</option>
             <option value="MODERATOR" <%= user.role === 'MODERATOR' ? 'selected' : '' %>>Moderator</option>
             <option value="CLIENT" <%= user.role === 'CLIENT' ? 'selected' : '' %>>Client</option>
           </select>
-          <input type="submit" value="update">
+          <select name="status" id="status">
+            <option value="Active" <%= user.status === 'Active' ? 'selected' : '' %>>Active</option>
+            <option value="Inactive" <%= user.status === 'Inactive' ? 'selected' : '' %>>Inactive</option>
+          </select>
+          <input type="submit" value="Update">
+        </form>
+      </td>
+      <td>
+        <!-- Delete User Button -->
+        <form action="/admin/delete-user" method="post" class="manage-user-form">
+          <input type="hidden" name="id" value="<%= user.id %>" />
+          <input type="submit" value="Delete" class="delete-btn">
         </form>
       </td>
     </tr>

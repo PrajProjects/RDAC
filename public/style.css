@@ -41,27 +41,6 @@ a:hover {
   background-color: #fdf2f8;
 }
 
-h1.title {
-  text-align: center;
-  margin: 1rem;
-  text-decoration: underline;
-}
-div.tutorial-info {
-  border: 4px solid #d1d5db;
-  padding: 32px;
-  border-radius: 16px;
-  margin-top: 32px;
-}
-ol.tutorial-info {
-  font-size: 1.5rem;
-  padding: 0 32px;
-  /* list-style-type: square; */
-  /* list-style: disc; */
-}
-
-.tutorial-info > li {
-  margin: 8px;
-}
 
 main {
   display: flex;
@@ -247,4 +226,78 @@ ul.messages * {
 }
 .messages .info {
   background-color: #93c5fd;
+}
+/* RBAC Section */
+.rbac-container {
+  display: flex;
+  align-items: center;
+  border: 4px solid #d1d5db;
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 32px;
+  background-color: #f9fafb;
+  gap: 24px; /* Space between the image and the text */
+}
+
+.rbac-image {
+  width: 40%; /* Adjust width as per your preference */
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rbac-message {
+  width: 60%; /* Adjust width as per your preference */
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.75;
+  color: #374151;
+  text-align: justify;
+}
+
+h1.title {
+  text-align: center;
+  margin: 1rem;
+  color:black;
+}
+
+/* Footer Styling */
+/* Footer Styling */
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  border-top: 4px solid #d1d5db;
+}
+
+.footer-container {
+  max-width: 760px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer-contact {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+.footer-contact a {
+  text-decoration: none;
+  color: #db2777; /* Highlight color */
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  background-color: #fdf2f8; /* Subtle hover background */
+  color: #1f2937; /* Dark text on hover */
 }

@@ -10,6 +10,7 @@ const connectMongo = require('connect-mongo');
 const { ensureLoggedIn } = require('connect-ensure-login');
 const { roles } = require('./utils/constants');
 
+
 // Initialization
 const app = express();
 app.use(morgan('dev'));
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 
 const MongoStore = connectMongo(session);
 // Init Session
